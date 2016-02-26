@@ -1,0 +1,7 @@
+<h1>Welcome, <%= @user.username %></h1>
+
+<% @user.gifs.each do |gif| %>
+  <p>
+    <%= gif.name %>
+  </p>
+<% end %>
