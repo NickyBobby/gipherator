@@ -1,8 +1,9 @@
- <h1>Welcome to The Gipherator</h1>
-
+<%= flash.now["success"] %> 
+<h1>Welcome to The Gipherator</h1>
+<%= link_to "Create Account", new_user_path %>
  <% @gifs.each do |g| %>
     <div class="">
       <h3> <%= g.name %> </h3>
-      <img src="<%= g.image_path %>"> 
+      <img src="<%= g.image_path %>">
     </div>
  <% end %>
