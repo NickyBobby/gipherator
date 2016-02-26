@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "user can login to account" do
+RSpec.feature "user can login to and logout of account" do
   scenario "user sees their dashboard" do
     user = User.create(username: "Jones", password: "password")
     gif1 = Gif.create(name: "Kazoo Kid", image_path: "http://gph.is/1W4DBfX")
@@ -23,5 +23,9 @@ RSpec.feature "user can login to account" do
     expect(page).to have_content "Kazoo Kid"
     expect(page).to have_no_content "Nickrinna"
     expect(page).to have_content "Logout"
+
+    click_on "Logout"
+    expect(current_path).to eq root_path
+    expect(page).to have_no_content "Welcome, Jones"
   end
 end
