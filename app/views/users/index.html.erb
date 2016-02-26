@@ -1,6 +1,7 @@
-<%= flash.now[:success] %> 
+<%= flash.now[:success] %>
 <h1>Welcome to The Gipherator</h1>
 <%= link_to "Create Account", new_user_path %>
+<%= link_to "Login", login_path %>
  <% @gifs.each do |g| %>
     <div class="">
       <h3> <%= g.name %> </h3>
