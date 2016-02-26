@@ -47,6 +47,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', github: 'thoughtbot/shoulda-matchers'
   gem 'factory_girl_rails'
+  gem 'mocha'
 end
 
 group :development do
