@@ -10,5 +10,6 @@
 
 <%= yield %>
 
+<h1> <% if current_user %> <%= "Welcome, #{current_user.username}" %> <% end %> </h1>
 </body>
 </html>

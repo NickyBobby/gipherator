@@ -1,3 +1,4 @@
+<%= flash.now[:error] %>
 <%= form_for(@user) do |f| %>
 <%= f.label :username %>
 <%= f.text_field :username %>
@@ -5,4 +6,3 @@
 <%= f.text_field :password %>
 <%= f.submit "Register" %>
 <% end %>
-<h1>flash.now["success"]</h1>
