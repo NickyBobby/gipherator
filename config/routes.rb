@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :new, :create]
   resources :gifs
 
+  namespace :admin do
+    resources :categories, only: [:index, :new, :show, :create]
+  end
+
   get '/login', to: 'sessions#new'
 
   post '/login', to: 'sessions#create'

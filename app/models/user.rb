@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   has_many :favorites
   has_many :gifs, through: :favorites
+
+  enum role: %w(default admin)
 end
