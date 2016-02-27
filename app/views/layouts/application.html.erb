@@ -8,8 +8,8 @@
 </head>
 <body>
 
+  <h2><%= "Welcome Admin" if current_admin? %></h2>
 <%= yield %>
-<h2> <%= "Welcome Admin" if current_admin? %> </h2>
 
 <h3> <% if current_user %> <%= "Welcome, #{current_user.username}" %>
   <h4><%= link_to "Logout", logout_path, method: :delete %></h4>

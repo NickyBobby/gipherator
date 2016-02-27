@@ -1,4 +1,5 @@
 <%= form_for(@category) do |f| %>
 <%= f.label :name %>
-<%= f.submit %>
+<%= f.text_field :name %>
+<%= f.submit "Create Category" %>
 <% end %>
