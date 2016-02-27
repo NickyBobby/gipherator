@@ -15,14 +15,14 @@ RSpec.feature "Regular user can mark favorite GIFs" do
     expect(page).to have_no_content("Kazoo Kid")
     expect(page).to have_no_content("Nickrinna")
 
-    visit root_path
+    click_on "Back to Home"
 
     click_on "Add Kazoo Kid to Favorites"
     click_on "Add Nickrinna to Favorites"
     expect(current_path).to eq root_path
     click_on "View my Gifs"
     expect(current_path).to eq user_path(user)
-    
+
     expect(page).to have_content "Kazoo Kid"
     expect(page).to have_content "Nickrinna"
   end
