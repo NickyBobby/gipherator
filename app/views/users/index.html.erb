@@ -14,7 +14,7 @@
 
     <div>
       <%= "#{gif.name}" %>
-      <img src="<%= gif.image_path %>" >
+      <img src="<%= gif.image_path %>" alt="This will display an animated GIF" />
       <%= f.submit "Add #{gif.name} to Favorites" %>
     </div>
   <% end %>

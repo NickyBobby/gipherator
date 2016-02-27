@@ -1,4 +1,4 @@
-<h1><%= @user.username %>'s Gifs</h1>
+<h1><%= "#{@user.username} Gifs" if current_user %></h1>
 
 <% @user.gifs.each do |gif| %>
   <p>
