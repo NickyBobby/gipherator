@@ -3,6 +3,7 @@
 <% @user.gifs.each do |gif| %>
   <p>
     <%= gif.name %>
+    <img src="<%= gif.image_path %>"/>
   </p>
 <% end %>
 
