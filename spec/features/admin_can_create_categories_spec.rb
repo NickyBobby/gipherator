@@ -13,11 +13,12 @@ RSpec.feature "Admin can create a categorie" do
 
     expect(page).to have_content "Welcome Admin"
     click_on "Create Category"
-    expect(current_path).to eq new_admin_category_path    
-    save_and_open_page
+    expect(current_path).to eq new_admin_category_path
     fill_in "Name", with: "Serial"
-    save_and_open_page
     click_on "Create Category"
+
+    expect(current_path).to eq user_path(admin.id)
+    expect(page).to have_content "Category 'Serial' Created!"
     expect(page).to have_content "Serial"
   end
 end
