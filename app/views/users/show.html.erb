@@ -1,4 +1,4 @@
-<h1><%= @user.username %>'s Gifs</h1>
+<h1><%= "#{@user.username} Gifs" if current_user %></h1>
 
 <% @user.gifs.each do |gif| %>
   <p>
@@ -8,5 +8,6 @@
 
 <%= link_to "Create Category", new_admin_category_path if current_admin? %>
 <%= flash[:success] %>
+<%= link_to "Add New Gifs", admin_gifs_path if current_admin? %>
 
 <%= link_to "Back to Home", root_path %>
