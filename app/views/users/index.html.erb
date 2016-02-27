@@ -2,9 +2,20 @@
 <h1>Welcome to The Gipherator</h1>
 <%= link_to "Create Account", new_user_path %>
 <%= link_to "Login", login_path %>
- <% @gifs.each do |g| %>
-    <div class="">
-      <h3> <%= g.name %> </h3>
-      <img src="<%= g.image_path %>">
+
+<h3>All Gifs</h3>
+<h3> <%= link_to "View my Gifs", user_path(current_user.id) if current_user %> </h3>
+
+
+
+
+<% @gifs.each do |gif| %>
+<%= form_for(gif) do |f| %>
+
+    <div>
+      <%= "#{gif.name}" %>
+      <img src="<%= gif.image_path %>" >
+      <%= f.submit "Add #{gif.name} to Favorites" %>
     </div>
- <% end %>
+  <% end %>
+<% end %>

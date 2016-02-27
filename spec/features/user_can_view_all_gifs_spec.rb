@@ -6,7 +6,7 @@ RSpec.feature "Visitor can see all gifs" do
     gif2 = Gif.create(name: "Nickrinna", image_path: "http://giphy.com/gifs/nick-erinna-nickrinna-l4KigEkud4mFRIsGk")
 
 
-    visit '/'
+    visit root_path
     expect(page).to have_content("The Gipherator")
     expect(page).to have_content("Kazoo Kid")
     expect(page).to have_content("Nickrinna")
