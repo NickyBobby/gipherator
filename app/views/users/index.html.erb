@@ -1,4 +1,4 @@
-<%= flash.now[:success] %>
+<%= flash[:success] %>
 <h1>Welcome to The Gipherator</h1>
 <%= link_to "Create Account", new_user_path %>
 <%= link_to "Login", login_path %>
@@ -18,5 +18,6 @@
       <%= f.submit "Add #{gif.name} to Favorites" %>
     </div>
   <% end %>
-  <%= link_to "Edit #{gif.name}", edit_admin_gif_path(gif) %>
+  <%= link_to "Edit #{gif.name}", edit_admin_gif_path(gif) if current_admin? %>
+  <%= link_to "Delete #{gif.name}", admin_gif_path(gif), method: :delete if current_admin? %>
 <% end %>

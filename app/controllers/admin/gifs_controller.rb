@@ -1,8 +1,10 @@
 require "faraday"
 require "json"
 
-class Admin::GifsController < ApplicationController
+class Admin::GifsController < Admin::AuthorizationController
+  before_action :require_admin
   include ApiJuicer
+
   def index
     @gif = Gif.new
   end
@@ -29,10 +31,18 @@ class Admin::GifsController < ApplicationController
     end
   end
 
+  def destroy
+    @gif = Gif.find(params[:id])
+    @gif.destroy
+    flash[:success] = "GIF was successfully deleted"
+    redirect_to root_path
+  end
+
 
 private
 
   def gif_params
     params.require(:gif).permit(:name, :image_path)
   end
+
 end
