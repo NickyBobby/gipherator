@@ -1,9 +1,9 @@
 class Admin::CategoriesController < Admin::AuthorizationController
   before_action :require_admin
-  
-  def index
-    @categories = Category.all
-  end
+
+  # def index
+  #   @categories = Category.all
+  # end
 
   def new
     @category = Category.new
