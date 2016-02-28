@@ -1,0 +1,9 @@
+<%= flash[:error] %>
+
+<%= form_for(@gif, url: admin_gif_path(@gif) ) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :image_path %>
+<%= f.text_field :image_path %>
+<%= f.submit %>
+<% end %>
