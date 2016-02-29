@@ -1,14 +1,15 @@
 <h1><%= "#{@user.username} Gifs" if current_user %></h1>
+<%= link_to "Create Category", new_admin_category_path if current_admin? %>
+<%= flash[:success] %>
+<%= link_to "Add New Gifs", admin_gifs_path if current_admin? %>
+
+<%= link_to "Back to Home", root_path %>
+
 
 <% @user.gifs.each do |gif| %>
   <p>
     <%= gif.name %>
     <img src="<%= gif.image_path %>"/>
   </p>
+  <h5><%= link_to "Remove #{gif.name} from Favorites", gif_path(gif), method: :delete if current_user %></h5>
 <% end %>
-
-<%= link_to "Create Category", new_admin_category_path if current_admin? %>
-<%= flash[:success] %>
-<%= link_to "Add New Gifs", admin_gifs_path if current_admin? %>
-
-<%= link_to "Back to Home", root_path %>
