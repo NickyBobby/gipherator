@@ -1,13 +1,11 @@
 <%= flash[:success] %>
 <h1>Welcome to The Gipherator</h1>
-<%= link_to "Create Account", new_user_path %>
-<%= link_to "Login", login_path %>
+<%= link_to "Create Account", new_user_path unless current_user %>
+<%= link_to "Login", login_path unless current_user %>
 
 <h3>All Gifs</h3>
 <h3> <%= link_to "View my Gifs", user_path(current_user.id) if current_user %> </h3>
-
-
-
+<%= flash[:error] %>
 
 <% @gifs.each do |gif| %>
 <%= form_for(gif) do |f| %>
