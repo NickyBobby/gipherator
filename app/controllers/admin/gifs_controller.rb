@@ -7,6 +7,7 @@ class Admin::GifsController < Admin::AuthorizationController
 
   def index
     @gif = Gif.new
+    @trending = trending_right_now
   end
 
   def create

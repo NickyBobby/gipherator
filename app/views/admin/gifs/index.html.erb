@@ -3,3 +3,11 @@
 <%= f.text_field :category %>
 <%= f.submit %>
 <% end %>
+
+
+<% @trending.each do |gif| %>
+
+  <img src="<%= gif %>" alt="This will display an animated GIF" />
+  <h5>Trending right now!</h5>
+
+<% end %>
