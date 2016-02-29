@@ -1,3 +1,6 @@
+<%= link_to "Back to Home", root_path %>
+
+
 <%= form_for(@category, url: admin_categories_path(@category)) do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>

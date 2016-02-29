@@ -10,10 +10,10 @@
 <% @gifs.each do |gif| %>
 <%= form_for(gif) do |f| %>
     <div>
-      <%= "#{gif.name}" %>
+      <h4><%= "#{gif.name}" %></h4>
       <img src="<%= gif.image_path %>" alt="This will display an animated GIF" />
 
-      <%= f.submit "Add #{gif.name} to Favorites" %>
+      <h5><%= f.submit "Add #{gif.name} to Favorites" if current_user %></h5>
     </div>
   <% end %>
   <%= link_to "Edit #{gif.name}", edit_admin_gif_path(gif) if current_admin? %>
